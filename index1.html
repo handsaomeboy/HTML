@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>回复/发送</title>
+	<style type="text/css">
+		#top{
+			width: 750px;
+			height:472px;
+			border: 1px solid red;	
+			background-image: url(img/1.jpg);
+		}
+		
+		
+	</style>
+	</head>
+	<body>
+		<div id="top"> 
+		</div>
+		<select id="se">
+			<option>卵琦</option>
+				<option>客服</option>
+		</select>
+		<input type="text" id="txt">
+		<input type="button" id="btn" value="发送">
+	</body>
+	<script>
+		window.onload=function(){
+			var oDiv=document.getElementById("top");
+			 var oBtn=document.getElementById("btn");
+			 var oTxt=document.getElementById("txt");
+			var  oSe=document.getElementById("se");
+			
+			 oBtn.onclick=function(){
+			 	 var oP=document.createElement("p");
+			 		var oP1=document.getElementsByTagName("p");
+			 	if(oP1.length==0){
+			 		oDiv.appendChild(oP);
+			 	}
+			 	else {
+			 		oDiv.insertBefore(oP,oP1[0])
+			 	}
+			 	oP.innerHTML=oSe.value+":"+oTxt.value;
+			 	oTxt.value="";
+			 }
+		}
+	</script>
+</html>
